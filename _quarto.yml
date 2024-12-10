@@ -12,9 +12,15 @@ website:
 
 format:
   html:
-    theme: cosmo
+    #theme: cosmo
+    theme: minty
     css: styles.css
     toc: true
 
 editor: visual
+
+execute:
+  echo: true
+  warning: false
+  message: false
 

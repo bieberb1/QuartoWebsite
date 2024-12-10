@@ -4,6 +4,4 @@ title: "About"
 
 About this site
 
-```{r}
-1 + 1
-```
+Practice at creating a website with Quarto hosted in GitHub pages

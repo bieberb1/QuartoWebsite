@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>QuartoWebsite – Quarto Website hosted on GitHub Pages</title>
+<title>My Quarto Website Demo – Quarto Website hosted on GitHub Pages</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -72,7 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-bd8cb2610f6c2810c4bc87234a365cf8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -100,6 +100,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/core-js-2.5.3/shim.min.js"></script>
+
+<script src="site_libs/react-18.2.0/react.min.js"></script>
+
+<script src="site_libs/react-18.2.0/react-dom.min.js"></script>
+
+<script src="site_libs/reactwidget-2.0.0/react-tools.js"></script>
+
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<link href="site_libs/reactable-0.4.4/reactable.css" rel="stylesheet">
+
+<script src="site_libs/reactable-binding-0.4.4/reactable.js"></script>
+
 
 
 <link rel="stylesheet" href="styles.css">
@@ -141,15 +157,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#steps-for-hosting-on-github-pages" id="toc-steps-for-hosting-on-github-pages" class="nav-link active" data-scroll-target="#steps-for-hosting-on-github-pages">Steps for hosting on GitHub Pages</a></li>
+  <li><a href="#basic-r-code-block" id="toc-basic-r-code-block" class="nav-link" data-scroll-target="#basic-r-code-block">Basic R-code block</a></li>
+  <li><a href="#ggplot-examples" id="toc-ggplot-examples" class="nav-link" data-scroll-target="#ggplot-examples">ggplot examples</a>
+  <ul class="collapse">
+  <li><a href="#scatterplot" id="toc-scatterplot" class="nav-link" data-scroll-target="#scatterplot">Scatterplot</a></li>
+  <li><a href="#scatterplot-with-marginal-histogram-or-boxplot" id="toc-scatterplot-with-marginal-histogram-or-boxplot" class="nav-link" data-scroll-target="#scatterplot-with-marginal-histogram-or-boxplot">Scatterplot with marginal histogram or boxplot</a></li>
+  <li><a href="#ordered-barchart" id="toc-ordered-barchart" class="nav-link" data-scroll-target="#ordered-barchart">Ordered barchart</a></li>
+  <li><a href="#boxplot-1" id="toc-boxplot-1" class="nav-link" data-scroll-target="#boxplot-1">Boxplot</a></li>
+  </ul></li>
+  <li><a href="#table-examples" id="toc-table-examples" class="nav-link" data-scroll-target="#table-examples">Table examples</a>
+  <ul class="collapse">
+  <li><a href="#manual-tables" id="toc-manual-tables" class="nav-link" data-scroll-target="#manual-tables">Manual tables</a></li>
+  <li><a href="#table-with-reactable-for-pagination" id="toc-table-with-reactable-for-pagination" class="nav-link" data-scroll-target="#table-with-reactable-for-pagination">Table with reactable for pagination</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">QuartoWebsite</h1>
+<h1 class="title">My Quarto Website Demo</h1>
 </div>
 
 
@@ -166,16 +201,227 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="steps-for-hosting-on-github-pages" class="level2">
+<h2 class="anchored" data-anchor-id="steps-for-hosting-on-github-pages">Steps for hosting on GitHub Pages</h2>
+<ol type="1">
+<li><p>Create New Project in R Studio . . . New Directory . . . Quarto Website . . . check ‘Create a git repository’ (cannot be a folder within another repository)</p></li>
+<li><p>In _quarto.yml, add “output-dir: docs” under “project”; other universal options can be set here</p></li>
+<li><p>Build . . . Render Website</p></li>
+<li><p>In parent folder ensure a .nojekyll file is created in parent folder</p></li>
+<li><p>Push updates to GitHub</p></li>
+<li><p>In GitHub settings for the repository, click on Pages . . . Deploy from Branch, main/docs . . . save</p></li>
+<li><p>URL will be username.github.io/repository name</p></li>
+</ol>
+<hr>
 <p>This is a Quarto website.</p>
 <p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
+<hr>
+</section>
+<section id="basic-r-code-block" class="level2">
+<h2 class="anchored" data-anchor-id="basic-r-code-block">Basic R-code block</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R-code</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Can be hidden by changing echo: false in qmd setings or yml settings</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
 </div>
+</section>
+<section id="ggplot-examples" class="level2">
+<h2 class="anchored" data-anchor-id="ggplot-examples">ggplot examples</h2>
+<p><a href="https://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code" class="uri">https://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code</a></p>
+<section id="scatterplot" class="level3">
+<h3 class="anchored" data-anchor-id="scatterplot">Scatterplot</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("ggplot2")</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># load package and data</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)  <span class="co"># turn-off scientific notation like 1e+48</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())  <span class="co"># pre-set the bw theme.</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"midwest"</span>, <span class="at">package =</span> <span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gg <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(midwest, <span class="fu">aes</span>(<span class="at">x=</span>area, <span class="at">y=</span>poptotal)) <span class="sc">+</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col=</span>state, <span class="at">size=</span>popdensity)) <span class="sc">+</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"loess"</span>, <span class="at">se=</span>F) <span class="sc">+</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.1</span>)) <span class="sc">+</span> </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">500000</span>)) <span class="sc">+</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">subtitle=</span><span class="st">"Area Vs Population"</span>, </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"Population"</span>, </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Area"</span>, </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">title=</span><span class="st">"Scatterplot"</span>, </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: midwest"</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="scatterplot-with-marginal-histogram-or-boxplot" class="level3">
+<h3 class="anchored" data-anchor-id="scatterplot-with-marginal-histogram-or-boxplot">Scatterplot with marginal histogram or boxplot</h3>
+<p>(tabset example)</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Histogram</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Boxplot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(ggplot2)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("ggExtra")</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggExtra)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mpg, <span class="at">package=</span><span class="st">"ggplot2"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># mpg &lt;- read.csv("http://goo.gl/uEeRGu")</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatterplot</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())  <span class="co"># pre-set the bw theme.</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>mpg_select <span class="ot">&lt;-</span> mpg[mpg<span class="sc">$</span>hwy <span class="sc">&gt;=</span> <span class="dv">35</span> <span class="sc">&amp;</span> mpg<span class="sc">$</span>cty <span class="sc">&gt;</span> <span class="dv">27</span>, ]</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(cty, hwy)) <span class="sc">+</span> </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_count</span>() <span class="sc">+</span> </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span><span class="st">"lm"</span>, <span class="at">se=</span>F)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggMarginal</span>(g, <span class="at">type =</span> <span class="st">"histogram"</span>, <span class="at">fill=</span><span class="st">"transparent"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggMarginal</span>(g, <span class="at">type =</span> <span class="st">"boxplot"</span>, <span class="at">fill=</span><span class="st">"transparent"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ordered-barchart" class="level3">
+<h3 class="anchored" data-anchor-id="ordered-barchart">Ordered barchart</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare data: group mean city mileage by manufacturer.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>cty_mpg <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(mpg<span class="sc">$</span>cty, <span class="at">by=</span><span class="fu">list</span>(mpg<span class="sc">$</span>manufacturer), <span class="at">FUN=</span>mean)  <span class="co"># aggregate</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(cty_mpg) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"make"</span>, <span class="st">"mileage"</span>)  <span class="co"># change column names</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>cty_mpg <span class="ot">&lt;-</span> cty_mpg[<span class="fu">order</span>(cty_mpg<span class="sc">$</span>mileage), ]  <span class="co"># sort</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>cty_mpg<span class="sc">$</span>make <span class="ot">&lt;-</span> <span class="fu">factor</span>(cty_mpg<span class="sc">$</span>make, <span class="at">levels =</span> cty_mpg<span class="sc">$</span>make)  <span class="co"># to retain the order in plot.</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Draw plot</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cty_mpg, <span class="fu">aes</span>(<span class="at">x=</span>make, <span class="at">y=</span>mileage)) <span class="sc">+</span> </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">width=</span>.<span class="dv">5</span>, <span class="at">fill=</span><span class="st">"tomato3"</span>) <span class="sc">+</span> </span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Ordered Bar Chart"</span>, </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"Make Vs Avg. Mileage"</span>, </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span><span class="st">"source: mpg"</span>) <span class="sc">+</span> </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">65</span>, <span class="at">vjust=</span><span class="fl">0.6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="boxplot-1" class="level3">
+<h3 class="anchored" data-anchor-id="boxplot-1">Boxplot</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Boxplot </span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(manufacturer, cty))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>(<span class="at">binaxis=</span><span class="st">'y'</span>, </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">stackdir=</span><span class="st">'center'</span>, </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">dotsize =</span> .<span class="dv">5</span>, </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">fill=</span><span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">65</span>, <span class="at">vjust=</span><span class="fl">0.6</span>)) <span class="sc">+</span> </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Box plot + Dot plot"</span>, </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle=</span><span class="st">"City Mileage vs Class: Each dot represents 1 row in source data"</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption=</span><span class="st">"Source: mpg"</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x=</span><span class="st">"Class of Vehicle"</span>,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y=</span><span class="st">"City Mileage"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="table-examples" class="level2">
+<h2 class="anchored" data-anchor-id="table-examples">Table examples</h2>
+<section id="manual-tables" class="level3">
+<h3 class="anchored" data-anchor-id="manual-tables">Manual tables</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Col1</th>
+<th>Col2</th>
+<th>Col3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>3</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>4</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>5</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="table-with-reactable-for-pagination" class="level3">
+<h3 class="anchored" data-anchor-id="table-with-reactable-for-pagination">Table with reactable for pagination</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reactable)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(country, year, lifeExp) <span class="sc">%&gt;%</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">country =</span> <span class="fu">as.character</span>(country)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_wider</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">id_cols =</span> country,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">names_from =</span> year,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">values_from =</span> lifeExp</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(country, <span class="st">'1952'</span>, <span class="st">'1972'</span>, <span class="st">'1992'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">Country =</span> country)<span class="sc">%&gt;%</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">reactable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="reactable html-widget html-fill-item" id="htmlwidget-93b7d87d9cff5f5bbf33" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-93b7d87d9cff5f5bbf33">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Country":["Afghanistan","Albania","Algeria","Angola","Argentina","Australia","Austria","Bahrain","Bangladesh","Belgium","Benin","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo, Dem. Rep.","Congo, Rep.","Costa Rica","Cote d'Ivoire","Croatia","Cuba","Czech Republic","Denmark","Djibouti","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Ethiopia","Finland","France","Gabon","Gambia","Germany","Ghana","Greece","Guatemala","Guinea","Guinea-Bissau","Haiti","Honduras","Hong Kong, China","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kenya","Korea, Dem. Rep.","Korea, Rep.","Kuwait","Lebanon","Lesotho","Liberia","Libya","Madagascar","Malawi","Malaysia","Mali","Mauritania","Mauritius","Mexico","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Panama","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Reunion","Romania","Rwanda","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Sierra Leone","Singapore","Slovak Republic","Slovenia","Somalia","South Africa","Spain","Sri Lanka","Sudan","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tanzania","Thailand","Togo","Trinidad and Tobago","Tunisia","Turkey","Uganda","United Kingdom","United States","Uruguay","Venezuela","Vietnam","West Bank and Gaza","Yemen, Rep.","Zambia","Zimbabwe"],"1952":[28.801,55.23,43.077,30.015,62.485,69.12,66.8,50.939,37.484,68,38.223,40.414,53.82,47.622,50.917,59.6,31.975,39.031,39.417,38.523,68.75,35.463,38.092,54.745,44,50.643,40.715,39.143,42.111,57.206,40.477,61.21,59.421,66.87,70.78,34.812,45.928,48.357,41.893,45.262,34.482,35.928,34.078,66.55,67.41,37.003,30,67.5,43.149,65.86,42.023,33.609,32.5,37.579,41.912,60.96,64.03,72.49,37.373,37.468,44.869,45.32,66.91,65.39,65.94,58.53,63.03,43.158,42.27,50.056,47.453,55.565,55.928,42.138,38.48,42.723,36.681,36.256,48.463,33.685,40.543,50.986,50.789,42.244,59.164,42.873,31.286,36.319,41.725,36.157,72.13,69.39,42.314,37.444,36.324,72.67,37.578,43.436,55.191,62.649,43.902,47.752,61.31,59.82,64.28,52.724,61.05,40,46.471,39.875,37.278,57.996,30.331,60.396,64.36,65.57,32.978,45.009,64.94,57.593,38.635,41.407,71.86,69.62,45.883,58.5,41.215,50.848,38.596,59.1,44.6,43.585,39.978,69.18,68.44,66.071,55.088,40.412,43.16,32.548,42.038,48.451],"1972":[36.088,67.69,54.518,37.928,67.065,71.93,70.63,63.3,45.252,71.44,47.014,46.714,67.45,56.024,59.504,70.9,43.591,44.057,40.317,47.049,72.88,43.457,45.569,63.441,63.11888,61.623,48.944,45.989,54.907,67.849,49.801,69.61,70.723,70.29,73.47,44.366,59.631,58.796,51.137,58.207,40.516,44.142,43.515,70.87,72.38,48.69,38.308,71,49.875,72.34,53.738,38.842,36.486,48.042,53.884,72,69.76,74.46,50.651,49.203,55.234,56.95,71.28,71.63,72.19,69,73.42,56.528,53.559,63.983,62.612,67.712,65.421,49.767,42.614,52.773,44.851,41.766,63.01,39.977,48.437,62.944,62.361,53.754,70.636,52.862,40.328,53.07,53.867,43.971,73.75,71.89,55.151,40.546,42.821,74.34,52.143,51.929,66.216,65.815,55.448,58.065,70.85,69.26,72.16,64.274,69.21,44.6,56.48,53.886,45.815,68.7,35.4,69.521,70.35,69.82,40.973,53.696,73.06,65.042,45.083,49.552,74.72,73.78,57.296,69.39,47.62,60.405,49.759,65.9,55.602,57.005,51.016,72.01,71.34,68.673,65.712,50.254,56.532,39.848,50.107,55.635],"1992":[41.674,71.581,67.744,40.647,71.868,77.56,76.04,72.601,56.018,76.46,53.919,59.957,72.178,62.745,67.057,71.19,50.26,44.736,55.803,54.314,77.95,49.396,51.724,74.126,68.69,68.421,57.939,45.548,56.433,75.713,52.044,72.527,74.414,72.4,75.33,51.604,68.457,69.613,63.674,66.798,47.545,49.991,48.091,75.7,77.46,61.366,52.644,76.07,57.501,77.03,63.373,48.576,43.266,55.089,66.399,77.601,69.17,78.77,60.223,62.681,65.742,59.461,75.467,76.93,77.44,71.766,79.36,68.015,59.285,69.978,72.244,75.19,69.292,59.685,40.802,68.755,52.214,49.42,70.693,48.388,58.333,69.745,71.455,61.271,75.435,65.393,44.284,59.32,61.999,55.727,77.42,76.33,65.843,47.391,47.472,77.32,71.197,60.838,72.462,68.225,66.458,66.458,70.99,74.86,73.911,73.615,69.36,23.599,62.742,68.768,58.196,71.659,38.333,75.788,71.38,73.64,39.658,61.888,77.57,70.379,53.556,58.474,78.16,78.03,69.249,74.26,50.44,67.298,58.061,69.862,70.001,66.146,48.825,76.42,76.09,72.752,71.15,67.662,69.718,55.599,46.1,60.377]},"columns":[{"id":"Country","name":"Country","type":"character"},{"id":"1952","name":"1952","type":"numeric"},{"id":"1972","name":"1972","type":"numeric"},{"id":"1992","name":"1992","type":"numeric"}],"dataKey":"489c73f5469dd600203b82040d1d524f"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
